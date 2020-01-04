@@ -11,6 +11,7 @@ print(path.parent)
 
 paths = [p for p in path.iterdir() if p.is_dir()]
 py_files = [p for p in path.glob("*.py")]
+another_py_files = [p for p in path.rglob("*.py")]
 print(paths)
 print(py_files)
 
