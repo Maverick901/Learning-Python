@@ -1,4 +1,6 @@
 from pathlib import Path
+from time import ctime
+import shutil
 
 path = Path("/Users/apple/Desktop/datastructure")
 print(path.exists())
@@ -17,3 +19,13 @@ print(py_files)
 
 path = path.with_suffix(".py")
 print(path)
+
+path = Path("/Users/apple/Desktop/datastructure/data.py")
+print(path.stat())
+print(ctime(path.stat().st_ctime))
+
+
+source = Path("/Users/apple/Desktop/datastructure/data.py")
+target = Path("/Users/apple/Desktop/datastructure/structure.py")
+
+shutil.copy(source, target)
